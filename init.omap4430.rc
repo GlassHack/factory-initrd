@@ -346,7 +346,7 @@ on boot
     chown system system /sys/devices/platform/omap_i2c.4/i2c-4/4-0035/driver_flags
     chown system system /sys/devices/platform/omap_i2c.4/i2c-4/4-0035/error_code
     chown system system /sys/devices/platform/omap_i2c.4/i2c-4/4-0035/flash_status
-    chown system system /sys/devices/platform/omap_i2c.4/i2c-4/4-0035/frame_count
+    chown system system /sys/devices/platform/omap_i2c.4/i2c-4/4-0035/error_count
     chown system system /sys/devices/platform/omap_i2c.4/i2c-4/4-0035/ir
     chown system system /sys/devices/platform/omap_i2c.4/i2c-4/4-0035/irq
     chown system system /sys/devices/platform/omap_i2c.4/i2c-4/4-0035/irq_status
@@ -405,6 +405,9 @@ on fs
 
     # Set permissions for backlight control
     chown system system /sys/devices/platform/omapdss/manager2/panel-notle-dpi/brightness
+    chown system system /sys/devices/platform/omapdss/manager2/panel-notle-dpi/brightness_limit
+    chown system system /sys/devices/platform/omapdss/manager2/panel-notle-dpi/brightness_multiplier
+    chown system system /sys/devices/platform/omapdss/manager2/panel-notle-dpi/mono
 
     # Set permissions to allow display rendering rate control during video recording
     chown media media /sys/devices/platform/omapdss/manager2/vsync_divider
