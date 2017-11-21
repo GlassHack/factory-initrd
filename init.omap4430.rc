@@ -276,6 +276,7 @@ on boot
     write /sys/devices/system/cpu/cpufreq/interactive/boost_timeout 30000000
     write /sys/devices/system/cpu/cpu0/cpufreq/boost_cpufreq 1
 
+    mkdir /data/misc/audio 0664 system system
     mkdir /data/misc/gcam 0770 media camera 
     mkdir /data/gps 0770 system system
     mkdir /data/gps/nvm 0770 system system
@@ -400,6 +401,7 @@ on boot
 on fs
     symlink /dev/block/platform /dev/block/platform/omap
     mount_all /fstab.omap4430
+    swapon_all /fstab.omap4430
 
     # Set permissions for backlight control
     chown system system /sys/devices/platform/omapdss/manager2/panel-notle-dpi/brightness
