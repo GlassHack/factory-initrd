@@ -15,4 +15,4 @@
 /dev/block/platform/omap/omap_hsmmc.1/by-name/efs       /bootconfig         emmc      defaults                                              defaults
 /dev/block/platform/omap/omap_hsmmc.1/by-name/efs       /bootloader         emmc      defaults                                              defaults
 
-/dev/block/zram0 none swap defaults zramsize=134217728
+#/dev/block/zram0 none swap defaults zramsize=134217728

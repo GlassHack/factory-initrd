@@ -19,3 +19,6 @@
 
 #for PVR
 /dev/pvrsrvkm             0666   system     system
+
+# for USB webcam
+/dev/video0               0777   system     system

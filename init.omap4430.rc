@@ -1,5 +1,6 @@
 import init.omap4430.usb.rc
 import init.omap4430.bt.rc
+import init.omap4430.buildspecific.rc
 
 on post-fs-data
     mkdir /data/system 0755 system system
@@ -439,6 +440,12 @@ on charger
 
 service battery-charger /charger
     class charger
+
+service glass_gpsclear /system/etc/glass_gpsclear.sh
+    class main
+    user root
+    group root
+    oneshot
 
 service glass_bqflash /system/etc/glass_bqflash.sh
     class main
