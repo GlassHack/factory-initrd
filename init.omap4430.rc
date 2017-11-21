@@ -2,6 +2,8 @@ import init.omap4430.usb.rc
 import init.omap4430.bt.rc
 
 on post-fs-data
+    mkdir /data/system 0755 system system
+
     # we will remap this as /mnt/sdcard with the sdcard fuse tool
     mkdir /data/media 0775 media_rw media_rw
     chown media_rw media_rw /data/media
