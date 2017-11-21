@@ -416,6 +416,10 @@ on fs
     wait /dev/rpmsg-omx0
     wait /dev/rpmsg-omx1
 
+    # Bootconfig permissions
+    chown root system /dev/block/mmcblk0p4
+    chmod 0660 /dev/block/mmcblk0p4
+
     # Load Required Kernel Modules
     # Note for those who adb sync, you will make the ko -rw thus skipping
     # the insmod below due to security reasons.
