@@ -399,9 +399,7 @@ on boot
 
 on fs
     symlink /dev/block/platform /dev/block/platform/omap
-    mount ext4 /dev/block/platform/omap_hsmmc.1/by-name/system /system wait ro
-    mount ext4 /dev/block/platform/omap_hsmmc.1/by-name/userdata /data wait noatime nosuid nodev
-    mount ext4 /dev/block/platform/omap_hsmmc.1/by-name/cache /cache wait noatime nosuid nodev
+    mount_all /fstab.omap4430
 
     # Set permissions for backlight control
     chown system system /sys/devices/platform/omapdss/manager2/panel-notle-dpi/brightness
