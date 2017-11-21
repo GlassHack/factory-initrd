@@ -410,6 +410,7 @@ on fs
     chown system system /sys/devices/platform/omapdss/manager2/panel-notle-dpi/brightness_limit
     chown system system /sys/devices/platform/omapdss/manager2/panel-notle-dpi/brightness_multiplier
     chown system system /sys/devices/platform/omapdss/manager2/panel-notle-dpi/mono
+    chown system system /sys/devices/platform/omapdss/manager2/panel-notle-dpi/gamma_preset
 
     # Set permissions to allow display rendering rate control during video recording
     chown media media /sys/devices/platform/omapdss/manager2/vsync_divider
