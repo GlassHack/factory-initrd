@@ -1,0 +1,9 @@
+service hciattach /system/bin/logwrapper /system/bin/brcm_patchram_plus --enable_hci --enable_lpm \
+    --baudrate 3692000 --patchram system/etc/wifi/bcmdhd.hcd \
+    --scopcm 0,2,0,1,1,0,0,0,0,0 \
+    --tosleep 50000 --no2bytes --bd_addr_create \
+     /dev/ttyO1
+    class main
+    user bluetooth
+    group bluetooth net_bt_admin radio
+    disabled
