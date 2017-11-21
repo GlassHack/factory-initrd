@@ -358,6 +358,7 @@ on boot
     chown system system /sys/devices/platform/omap_i2c.4/i2c-4/4-0035/passthru_enable
     chown system system /sys/devices/platform/omap_i2c.4/i2c-4/4-0035/pause
     chown media media /sys/devices/platform/omap_i2c.4/i2c-4/4-0035/pause_for_audio
+    chmod 0664 /sys/devices/platform/omap_i2c.4/i2c-4/4-0035/pause_for_audio
     chown system system /sys/devices/platform/omap_i2c.4/i2c-4/4-0035/prox_version
     chown system system /sys/devices/platform/omap_i2c.4/i2c-4/4-0035/proxraw
     chown system system /sys/devices/platform/omap_i2c.4/i2c-4/4-0035/sample_count
