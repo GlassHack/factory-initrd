@@ -23,8 +23,6 @@ on init
 
     # GPS
     chown system system /dev/ttyO3
-    chown system system /sys/class/gpio/gpio49/value
-    chown system system /sys/class/gpio/gpio52/value
     chmod 0660 /dev/ttyO3
 
     # Invensense MPU driver
@@ -156,8 +154,6 @@ on init
     chown system system /sys/devices/platform/omap/omap_i2c.4/i2c-4/4-003a/als_filter_interrupts
     chown system system /sys/devices/platform/omap/omap_i2c.4/i2c-4/4-003a/ps_filter_interrupts
     chown media media /sys/devices/platform/usb_mux.0/mux_mode
-    chown system system /sys/devices/virtual/gps/gps_elton/awake
-    chown system system /sys/devices/virtual/gps/gps_elton/int_offset
     chown system system /sys/devices/virtual/input/input2/als_adc
     chown system system /sys/devices/virtual/input/input2/als_resolution
     chown system system /sys/devices/virtual/input/input2/als_enable
@@ -220,8 +216,6 @@ on init
     chmod 0664 /sys/devices/platform/omap/omap_i2c.4/i2c-4/4-003a/als_filter_interrupts
     chmod 0664 /sys/devices/platform/omap/omap_i2c.4/i2c-4/4-003a/ps_filter_interrupts
     chmod 0664 /sys/devices/platform/usb_mux.0/mux_mode
-    chmod 0664 /sys/devices/virtual/gps/gps_elton/awake
-    chmod 0664 /sys/devices/virtual/gps/gps_elton/int_offset
     chmod 0664 /sys/devices/virtual/input/input2/als_adc
     chmod 0664 /sys/devices/virtual/input/input2/als_resolution
     chmod 0664 /sys/devices/virtual/input/input2/als_enable
@@ -262,8 +256,8 @@ on boot
     export PATH /sbin:/vendor/bin:/system/sbin:/system/bin:/system/xbin:/data/local/bin:/data/local/mnt/android/bin
 
     mkdir /data/misc/gcam 0770 media camera 
-    mkdir /data/misc/gps 0770 system system
-    mkdir /data/misc/gps/nvm 0770 system system
+    mkdir /data/gps 0770 system system
+    mkdir /data/gps/NVM 0770 system system
 
     mkdir /data/misc/wifi 0770 wifi wifi
     mkdir /data/misc/wifi/sockets 0770 wifi wifi
@@ -458,7 +452,7 @@ service glass_init /system/etc/glass_init.sh
     class main
     oneshot
 
-# Set up the serial number.
-service glass_serialno /system/etc/glass_serialno.sh
+# Read bootconfig data.
+service glass_bootconfig /system/etc/glass_bootconfig.sh
     class main
     oneshot
